@@ -1,26 +1,19 @@
 #!/bin/bash
 
-# List of packages to install
-packages=(
-    build-essential
-    gdb  # GNU Debugger
-    cmake  # Build system generator
-    git  # Version control system
-    libboost-all-dev  # Boost C++ Libraries
-    libssl-dev  # OpenSSL development libraries
-    libncurses5-dev  # ncurses library
-    libyaml-cpp-dev  # YAML parser and emitter for C++
-        # Add more packages as needed
-)
-# Update package list and upgrade existing packages
-sudo apt update -y
-sudo apt upgrade -y
-# Install the specified packages
-for package in "${packages[@]}"; do
-    sudo apt install -y "$package"
-done
+# Update the system
+sudo dnf update -y
 
-sudo snap install -y --classic code
-# Optionally, perform additional configuration or setup here
-# ...
-g++ -o loadernode /root/loadernode/srccpp/loadernode.cpp
+# Install essential development tools and libraries
+sudo dnf groupinstall -y "Development Tools"
+sudo dnf install -y cmake
+sudo dnf install -y git
+sudo dnf install -y boost-devel
+sudo dnf install -y openssl-devel
+sudo dnf install -y ncurses-devel
+sudo dnf install -y yaml-cpp-devel
+
+echo "C++ development packages and tools installation complete."
+
+g++ -o loadernode ./loadernode/srccpp/loadernode.cpp
+
+echo "C++ development packages installation and compilation complete."
