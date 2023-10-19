@@ -16,4 +16,5 @@ echo "C++ development packages and tools installation complete."
 
 g++ -o workerloadernode ./loadernode/srccpp/loadernode.cpp
 g++ -o serverloadernode ./loadernode/srccpp/server.cpp
+g++ -o clientloadernode ./loadernode/srccpp/client.cpp
 echo "C++ development packages installation and compilation complete."
