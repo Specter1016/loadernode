@@ -14,6 +14,6 @@ sudo dnf install -y yaml-cpp-devel
 
 echo "C++ development packages and tools installation complete."
 
-g++ -o loadernode ./loadernode/srccpp/loadernode.cpp
-
+g++ -o workerloadernode ./loadernode/srccpp/loadernode.cpp
+g++ -o serverloadernode ./loadernode/srccpp/server.cpp
 echo "C++ development packages installation and compilation complete."
